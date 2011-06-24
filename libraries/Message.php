@@ -5,7 +5,7 @@
 *
 * @author  Adam Jackett
 * @url http://www.darkhousemedia.com/
-* @version 2.1
+* @version 1.2.0
 */
 
 class CI_Message {
@@ -79,7 +79,7 @@ class CI_Message {
 	public function validation_errors(){
 		if(!function_exists('validation_errors')) $this->CI->load->helper('form');
 
-		$temp_errors = explode("\n", strip_tags(validation_errors()))
+		$temp_errors = explode("\n", strip_tags(validation_errors()));
 		$errors = array();
 		foreach($temp_errors as $e){
 			if(!empty($e)) $errors[] = $e;
