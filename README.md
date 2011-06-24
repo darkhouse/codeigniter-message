@@ -8,7 +8,7 @@ Usage
 
 Load the Message Spark.
 
-    $this->load->spark('Message/x.x.x');
+    $this->load->spark('message/x.x.x');
 
 Or load the Message Library
 
