@@ -76,4 +76,19 @@ class CI_Message {
 		return $content;
 	}
 
+	public function validation_errors(){
+		if(!function_exists('validation_errors')) $this->CI->load->helper('form');
+
+		$temp_errors = explode("\n", strip_tags(validation_errors()))
+		$errors = array();
+		foreach($temp_errors as $e){
+			if(!empty($e)) $errors[] = $e;
+		}
+		return $errors;
+	}
+
+	public function keep(){
+		$this->CI->session->keep_flashdata('_messages');
+	}
+
 } 
